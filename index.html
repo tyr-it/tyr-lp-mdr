@@ -191,6 +191,10 @@
     .myth-box { margin-top:32px; background:rgba(193,18,31,.08); border:1px solid rgba(193,18,31,.25); border-radius:var(--radius); padding:24px 28px; }
     .myth-box h4 { font-size:1rem; font-weight:700; margin-bottom:8px; color:var(--primary-glow); }
     .myth-box p { font-size:.9rem; color:var(--muted); }
+    .fenrir-callout { margin:32px 0; background:linear-gradient(160deg,rgba(11,15,20,.97),rgba(20,24,32,.97)); border:1px solid rgba(100,120,150,.25); border-left:3px solid rgba(140,155,175,.5); border-radius:var(--radius); padding:24px 28px; position:relative; }
+    .fenrir-callout::after { content:'🐺'; font-size:2rem; position:absolute; top:18px; right:24px; opacity:.25; line-height:1; }
+    .fenrir-callout .fenrir-label { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); display:block; margin-bottom:10px; }
+    .fenrir-callout p { font-size:.92rem; color:var(--muted); line-height:1.75; font-style:italic; margin:0; }
 
     /* ── FRANKENSTEIN ── */
     .frank-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px; }
@@ -481,8 +485,10 @@
 <!-- ══════════════════════════════════════════════
      O RISCO — DORES
 ═══════════════════════════════════════════════ -->
-<section id="risco">
-  <div class="container">
+<section id="risco" style="position:relative;overflow:hidden;">
+  <img src="assets/images/wolf-fenrir.webp" alt="" aria-hidden="true"
+    style="position:absolute;left:0;top:0;width:60%;height:100%;object-fit:cover;object-position:right center;opacity:0.09;pointer-events:none;z-index:0;filter:grayscale(15%);">
+  <div class="container" style="position:relative;z-index:1;">
     <div class="section-label"><span data-i18n="pain.label">O cenário atual</span></div>
     <h2 class="section-title" data-i18n="pain.title">O risco é <span class="text-red">real, contínuo</span> e silencioso.</h2>
     <p class="section-sub" data-i18n="pain.sub">Gestores estratégicos que acreditam estar protegidos são os primeiros alvos. Conheça as dores que o MDR resolve.</p>
@@ -501,6 +507,11 @@
     <div class="myth-box">
       <h4 data-i18n="pain.myth.title">O Mito da Responsabilidade Nativa</h4>
       <p data-i18n="pain.myth.text">Muitos gestores acreditam que provedores em nuvem garantem a segurança. Por contrato, a responsabilidade sobre os dados e a segurança é inteiramente da sua empresa. A questão não é se você será alvo — é quão bem suas defesas estão preparadas.</p>
+    </div>
+
+    <div class="fenrir-callout">
+      <span class="fenrir-label" data-i18n="fenrir.label">O Lobo e o Guardião</span>
+      <p data-i18n="fenrir.text">Na mitologia nórdica, Fenrir era o lobo que ameaçava destruir tudo — até que Týr se interpôs, sacrificando a própria mão para acorrentá-lo. No mundo digital, o lobo tem outro nome: ransomware, phishing, espionagem industrial. Ele circula em silêncio, esperando o momento certo. A TYR é o único que não recua.</p>
     </div>
 
     <div class="pain-grid">
