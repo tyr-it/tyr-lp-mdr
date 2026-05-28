@@ -333,19 +333,16 @@
     .contact-form-wrap h3 { font-size:1.1rem; font-weight:700; margin-bottom:24px; }
 
     /* ── FOOTER ── */
-    footer { background:var(--card); border-top:1px solid var(--border); padding:56px 0 24px; }
-    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
-    .footer-brand img { height:32px; margin-bottom:16px; }
-    .footer-brand p { font-size:.85rem; color:var(--muted); line-height:1.6; }
-    .footer-col h5 { font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:16px; }
-    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
-    .footer-col ul li a { font-size:.85rem; color:var(--muted); transition:color .2s; }
-    .footer-col ul li a:hover { color:var(--fg); }
-    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; gap:12px; }
-    .footer-bottom img { height:28px; }
-    .footer-bottom p { font-size:.8rem; color:var(--muted); text-align:center; }
-    .footer-bottom a { font-size:.8rem; color:var(--muted); transition:color .2s; }
-    .footer-bottom a:hover { color:var(--primary-glow); }
+    footer { border-top:1px solid var(--border); padding:48px 0 24px; }
+    .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px; margin-bottom:40px; }
+    .foot-logo img { height:32px; width:auto; margin-bottom:16px; filter:brightness(2); }
+    .foot-desc { font-size:14px; color:var(--muted); line-height:1.7; max-width:320px; }
+    .foot-col h4 { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:16px; color:var(--muted); }
+    .foot-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .foot-col ul li a { font-size:14px; color:var(--muted); transition:color .2s; }
+    .foot-col ul li a:hover { color:var(--fg); }
+    .foot-bottom { border-top:1px solid var(--border); padding-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .foot-copy { font-size:13px; color:var(--muted); }
 
     /* ── STICKY CTA ── */
     .sticky-cta { position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(11,15,20,.94); backdrop-filter:blur(16px); border-top:1px solid var(--border); padding:12px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; transform:translateY(100%); transition:transform .4s ease; }
@@ -360,7 +357,7 @@
       .cycle-grid { grid-template-columns:1fr 1fr; }
       .cycle-step:not(:last-child)::after { display:none; }
       .cycle-step:first-child,.cycle-step:last-child { border-radius:var(--radius); }
-      .footer-grid { grid-template-columns:1fr 1fr; }
+      .foot-grid { grid-template-columns:1fr 1fr; }
       .values-grid { grid-template-columns:1fr 1fr; }
       .sticky-cta { flex-direction:column; text-align:center; }
       .header-cta { display:none; }
@@ -370,7 +367,7 @@
     @media(max-width:600px) {
       .cycle-grid { grid-template-columns:1fr; }
       .values-grid { grid-template-columns:1fr 1fr; }
-      .footer-grid { grid-template-columns:1fr; }
+      .foot-grid { grid-template-columns:1fr; }
       .form-row { grid-template-columns:1fr; }
       .hero-stats { gap:20px; }
     }
@@ -927,6 +924,7 @@
         <div class="section-label"><span data-i18n="tyr.label">O Guardião</span></div>
         <h2 data-i18n="tyr.title">Tecnologia com <span class="text-red">Coragem e Honra.</span></h2>
         <p data-i18n="tyr.sub">Inspirados no deus nórdico Týr — símbolo de coragem e sacrifício — somos os arquitetos da sua segurança digital. A melhor tecnologia do mundo falha sem a disciplina certa.</p>
+        <img src="assets/images/tyr-warrior.webp" alt="TYR — Guardião Digital" style="width:100%;max-width:340px;border-radius:var(--radius);margin-bottom:28px;border:1px solid var(--border);box-shadow:0 0 40px -12px var(--primary);">
         <div class="values-grid">
           <div class="value-card">
             <div class="value-icon">⚔️</div>
@@ -1147,40 +1145,44 @@
 ═══════════════════════════════════════════════ -->
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/tyr-logo.png" alt="TYR — IT Innovation Technology">
-        <p data-i18n="footer.brand.tagline">Segurança digital com propósito.</p>
-        <p style="margin-top:8px;" data-i18n="footer.brand.desc">TYR. IT. Innovation Technology. Tecnologia com Coragem. Inovação com Propósito. Av. Paulista, 1636 — São Paulo, SP.</p>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="assets/tyr-logo.png" alt="TYR — IT Innovation Technology">
+        </div>
+        <p class="foot-desc" data-i18n="foot.desc">Proteção essencial para o seu negócio. Segurança, infraestrutura e continuidade com 20+ anos de expertise.</p>
+        <div style="margin-top:16px;padding:10px 0;">
+          <img src="assets/images/acronis-gold-2.webp" alt="Acronis Gold Service Provider" style="height:28px;">
+        </div>
       </div>
-      <div class="footer-col">
-        <h5 data-i18n="footer.sol.title">Soluções</h5>
+      <div class="foot-col">
+        <h4 data-i18n="foot.solutions">Soluções</h4>
         <ul>
-          <li><a href="#mdr" data-i18n="footer.sol.l1">MDR</a></li>
-          <li><a href="#arquitetura" data-i18n="footer.sol.l2">Fortaleza Digital</a></li>
-          <li><a href="https://tyr.digital/lp/disaster-recovery/" data-i18n="footer.sol.l3">Disaster Recovery</a></li>
-          <li><a href="https://tyr.digital/lp/protecao-microsoft-365/" data-i18n="footer.sol.l4">Proteção M365</a></li>
+          <li><a href="https://tyr.digital/lp/mdr/" data-i18n="foot.s1">MDR — Fortaleza Digital</a></li>
+          <li><a href="https://tyr.digital/lp/protecao-microsoft-365/" data-i18n="foot.s2">Proteção M365</a></li>
+          <li><a href="https://tyr.digital/lp/disaster-recovery/" data-i18n="foot.s3">Disaster Recovery</a></li>
+          <li><a href="https://tyr.digital" data-i18n="foot.s4">Infraestrutura &amp; Nuvem</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5 data-i18n="footer.ct.title">Contato</h5>
+      <div class="foot-col">
+        <h4 data-i18n="foot.contact">Contato</h4>
         <ul>
-          <li><a href="https://wa.me/5511954506539" target="_blank">WhatsApp</a></li>
-          <li><a href="tel:+551135880777">+55 (11) 3588-0777</a></li>
-          <li><a href="mailto:contato@tyr.com.br">contato@tyr.com.br</a></li>
-          <li><a href="https://tyr.digital" target="_blank">tyr.digital</a></li>
+          <li><a href="tel:+551135880777">📞 +55 (11) 3588-0777</a></li>
+          <li>
+            <a href="https://wa.me/5511954506539" target="_blank" style="display:flex;align-items:center;gap:6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              +55 (11) 95450-6539
+            </a>
+          </li>
+          <li><a href="mailto:contato@tyr.com.br">✉️ contato@tyr.com.br</a></li>
+          <li><a href="https://tyr.digital" target="_blank">🌐 tyr.digital</a></li>
+          <li><a href="https://tyr.digital/politica-de-privacidade/" target="_blank" data-i18n="foot.privacy">Política de Privacidade</a></li>
         </ul>
-      </div>
-      <div class="footer-col">
-        <h5 data-i18n="footer.partner.title">Parceria</h5>
-        <img src="assets/images/acronis-gold-2.webp" alt="Acronis Gold Service Provider" style="margin-top:4px;">
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <img src="assets/images/acronis-gold-2.webp" alt="Acronis Gold Service Provider">
-      <p data-i18n="footer.copy">© 2025 TYR Treinamento em Informática. Todos os direitos reservados.</p>
-      <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" data-i18n="footer.privacy">Política de Privacidade</a>
+    <div class="foot-bottom">
+      <p class="foot-copy" data-i18n="foot.copy">© 2026 TYR — IT Innovation Technology. Todos os direitos reservados.</p>
+      <p class="foot-copy">Av. Paulista, 1636 — São Paulo, SP</p>
     </div>
   </div>
 </footer>
