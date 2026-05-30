@@ -389,6 +389,19 @@
       .sticky-cta-btns { width:100%; justify-content:center; }
       .bg-section-img { display:none; }
     }
+    /* ── INFOGRÁFICO ── */
+    .infog-wrap{position:relative;cursor:pointer;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 0 60px -15px rgba(30,136,229,.3)}
+    .infog-wrap img{width:100%;height:auto;display:block;transition:filter .3s}
+    .infog-wrap:hover img{filter:brightness(.85)}
+    .infog-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;background:rgba(0,0,0,.3)}
+    .infog-wrap:hover .infog-overlay{opacity:1}
+    .infog-btn{display:flex;align-items:center;gap:10px;background:rgba(11,15,20,.85);color:#fff;padding:14px 24px;border-radius:100px;font-weight:600;font-size:14px;backdrop-filter:blur(10px)}
+    /* ── LIGHTBOX ── */
+    #lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:20px}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:100%;max-height:90vh;border-radius:var(--radius);object-fit:contain}
+    #lightbox-close{position:absolute;top:20px;right:28px;font-size:36px;color:#fff;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
+    #lightbox-close:hover{opacity:1}
   </style>
 </head>
 <body>
@@ -938,6 +951,24 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════
+     INFOGRÁFICO
+═══════════════════════════════════════════════ -->
+<section class="section-sm">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-label section-label-center" data-i18n="infog.label">Visão Geral</div>
+      <h2 style="font-size:clamp(24px,2.5vw,38px);font-weight:800;margin-bottom:12px" data-i18n="infog.h2">TYR & Acronis MDR: <span class="text-red">Sua Fortaleza Digital</span></h2>
+      <p style="font-size:15px;color:var(--muted)" data-i18n="infog.p">Clique na imagem para ampliar</p>
+    </div>
+    <div class="infog-wrap" onclick="openLightbox('assets/images/infografico-mdr.webp')">
+      <img src="assets/images/infografico-mdr.webp" alt="Infográfico MDR — TYR & Acronis" width="2032" height="1127" loading="lazy">
+      <div class="infog-overlay">
+        <div class="infog-btn">🔍 <span data-i18n="infog.zoom">Ampliar Infográfico</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════════════
      QUEM É A TYR
@@ -1227,6 +1258,12 @@
 </div>
 
 
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="assets/images/infografico-mdr.webp" alt="Infográfico MDR">
+</div>
+
 <!-- ══════════════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════════════ -->
@@ -1283,6 +1320,18 @@
     btn.disabled = false;
     btn.textContent = t[formId === 'contact-form' ? 'ct.form.submit' : (formId === 'mini-lead-form' ? 'mf.submit' : 'dl.form.submit')] || 'Enviar';
   }
+
+  /* ─── LIGHTBOX ─── */
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 </script>
 
 </body>
