@@ -420,6 +420,12 @@
     #lightbox img{max-width:100%;max-height:90vh;border-radius:var(--radius);object-fit:contain}
     #lightbox-close{position:absolute;top:20px;right:28px;font-size:36px;color:#fff;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
     #lightbox-close:hover{opacity:1}
+    .bc-bar{background:rgba(20,24,32,.6);border-bottom:1px solid var(--border);padding:10px 0;font-size:.8rem;color:var(--muted)}
+    .bc-inner{display:flex;align-items:center;gap:8px;max-width:1180px;margin:0 auto;padding:0 24px;flex-wrap:wrap}
+    .bc-bar a{color:var(--muted);transition:color .2s;text-decoration:none}
+    .bc-bar a:hover{color:var(--fg)}
+    .bc-sep{color:var(--border);user-select:none}
+    .bc-current{color:var(--primary);font-weight:600}
   </style>
 </head>
 <body>
@@ -427,6 +433,16 @@
 <!-- ══════════════════════════════════════════════
      HEADER
 ═══════════════════════════════════════════════ -->
+<nav class="bc-bar" aria-label="Breadcrumb">
+  <div class="bc-inner">
+    <a href="https://tyr.digital" data-i18n="bc.home">tyr.digital</a>
+    <span class="bc-sep" aria-hidden="true">›</span>
+    <a href="https://tyr.digital/solucoes/seguranca" data-i18n="bc.seg">Segurança</a>
+    <span class="bc-sep" aria-hidden="true">›</span>
+    <span class="bc-current" data-i18n="bc.current">MDR</span>
+  </div>
+</nav>
+
 <header>
   <div class="header-inner">
     <div class="header-logo">
